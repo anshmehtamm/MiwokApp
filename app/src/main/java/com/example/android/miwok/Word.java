@@ -27,17 +27,36 @@ public class Word {
     /** Miwok translation for the word */
     private String mMiwokTranslation;
 
+    /** Image for Translation */
+    private int mImageResourceId = HAS_IMAGE_ID;
+
+    private static final int HAS_IMAGE_ID = -1;
+
     /**
      * Create a new Word object.
      *
      * @param defaultTranslation is the word in a language that the user is already familiar with
      *                           (such as English)
      * @param miwokTranslation is the word in the Miwok language
+     *
+     * @param ImageResourceId is the resource id of the image
+     */
+    public Word(String defaultTranslation, String miwokTranslation, int ImageResourceId) {
+        mDefaultTranslation = defaultTranslation;
+        mMiwokTranslation = miwokTranslation;
+        mImageResourceId = ImageResourceId;
+    }
+
+    /**
+     *
+     * @param defaultTranslation is the word in a language that the user is already familiar with
+     * @param miwokTranslation is the word in the Miwok language
      */
     public Word(String defaultTranslation, String miwokTranslation) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
     }
+
 
     /**
      * Get the default translation of the word.
@@ -52,5 +71,12 @@ public class Word {
     public String getMiwokTranslation() {
         return mMiwokTranslation;
     }
+
+    /**
+     * Get the image resource id of the word.
+     */
+    public int getImageResourceId(){return mImageResourceId;}
+
+    public boolean hasImage(){return mImageResourceId!=HAS_IMAGE_ID;}
 
 }
