@@ -16,6 +16,7 @@
 package com.example.android.miwok;
 
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,15 +32,17 @@ import java.util.ArrayList;
  */
 public class WordAdapter extends ArrayAdapter<Word>  {
 
+    private int mColorResouceId;
     /**
      * Create a new {@link WordAdapter} object.
      *
      * @param context is the current context (i.e. Activity) that the adapter is being created in.
      * @param words is the list of {@link Word}s to be displayed.
      */
-    public WordAdapter(Context context, ArrayList<Word> words) {
+    public WordAdapter(Context context, ArrayList<Word> words,int ColorResouceId) {
 
         super(context, 0, words);
+        mColorResouceId = ColorResouceId;
     }
 
     @Override
@@ -76,6 +79,12 @@ public class WordAdapter extends ArrayAdapter<Word>  {
             ImageView image = (ImageView) listItemView.findViewById(R.id.image_view);
             image.setVisibility(View.GONE);
         }
+
+        View textContainer = listItemView.findViewById(R.id.text_container);
+
+        int color = ContextCompat.getColor(getContext(), mColorResouceId);
+
+        textContainer.setBackgroundColor(color);
 
         // Return the whole list item layout (containing 2 TextViews) so that it can be shown in
         // the ListView.
