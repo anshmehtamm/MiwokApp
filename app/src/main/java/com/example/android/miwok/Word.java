@@ -32,6 +32,8 @@ public class Word {
 
     private static final int HAS_IMAGE_ID = -1;
 
+    private  int mAudioResourceId ;
+
     /**
      * Create a new Word object.
      *
@@ -41,10 +43,11 @@ public class Word {
      *
      * @param ImageResourceId is the resource id of the image
      */
-    public Word(String defaultTranslation, String miwokTranslation, int ImageResourceId) {
+    public Word(String defaultTranslation, String miwokTranslation, int ImageResourceId, int AudioResourceId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
         mImageResourceId = ImageResourceId;
+        mAudioResourceId = AudioResourceId;
     }
 
     /**
@@ -79,4 +82,15 @@ public class Word {
 
     public boolean hasImage(){return mImageResourceId!=HAS_IMAGE_ID;}
 
+    public int getmAudioResourceId(){return  mAudioResourceId;}
+
+    @Override
+    public String toString() {
+        return "Word{" +
+                "mDefaultTranslation='" + mDefaultTranslation + '\'' +
+                ", mMiwokTranslation='" + mMiwokTranslation + '\'' +
+                ", mImageResourceId=" + mImageResourceId +
+                ", mAudioResourceId=" + mAudioResourceId +
+                '}';
+    }
 }
