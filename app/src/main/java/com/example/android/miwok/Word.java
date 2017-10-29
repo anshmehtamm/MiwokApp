@@ -55,9 +55,10 @@ public class Word {
      * @param defaultTranslation is the word in a language that the user is already familiar with
      * @param miwokTranslation is the word in the Miwok language
      */
-    public Word(String defaultTranslation, String miwokTranslation) {
+    public Word(String defaultTranslation, String miwokTranslation, int AudioResourceId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
+        mAudioResourceId = AudioResourceId;
     }
 
 
