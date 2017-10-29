@@ -53,6 +53,7 @@ public class NumbersActivity extends AppCompatActivity {
         // adapter knows how to create list items for each item in the list.
         WordAdapter adapter = new WordAdapter(this, words, R.color.category_numbers);
 
+
         // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
         // There should be a {@link ListView} with the view ID called list, which is declared in the
         // word_list.xml layout file.
